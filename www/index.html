@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <!-- Add a silly comment -->
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Main</title>
-  
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-
     <!-- your app's js -->
     <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+</head>
 
-    <ion-pane>
-      <ion-header-bar class="bar-dark">
-        <h1 class="title">Coin Count Branch</h1>
-      </ion-header-bar>
-      <ion-content>
-      <div class="row row-center">
-        <div class="col-offset-10"></div>
-        <div class="col text-left">100000000 บาท</div>
-        <div class="col">
-        <button class ="button button-dark button-block button-outline" style="margin:0">
-        0
-        </button>
-        </div>
-        <div class="col-offset-10"></div>
-      </div>
-      <div class="row row-center">
-        <div class="col-offset-10"></div>
-        <div class="col text-left">5 บาท</div>
-        <div class="col">
-        <button class ="button button-dark button-block button-outline" style="margin:0">
-        0
-        </button>
-        </div>
-        <div class="col-offset-10"></div>
-      </div>
-      <div class="row row-center">
-        <div class="col-offset-10"></div>
-        <div class="col text-left">2 บาท</div>
-        <div class="col">
-        <button class ="button button-dark button-block button-outline" style="margin:0">
-        0
-        </button>
-        </div>
-        <div class="col-offset-10"></div>
-      </div>
-      <div class="row row-center">
-        <div class="col-offset-10"></div>
-        <div class="col text-left">1 บาท</div>
-        <div class="col">
-        <button class ="button button-dark button-block button-outline" style="margin:0">
-        0
-        </button>
-        </div>
-        <div class="col-offset-10"></div>
-      </div>
-      <div class="row row-center">
-        <div class="col-offset-10"></div>
-        <div class="col text-left">50 สตางค์</div>
-        <div class="col">
-        <button class ="button button-dark button-block button-outline" style="margin:0">
-        0
-        </button>
-        </div>
-        <div class="col-offset-10"></div>
-      </div>
-      <div class="row row-center">
-        <div class="col-offset-10"></div>
-        <div class="col text-left">25 สตางค์</div>
-        <div class="col">
-        <button class ="button button-dark button-block button-outline" style="margin:0">
-        0
-        </button>
-        </div>
-        <div class="col-offset-10"></div>
-      </div>
-      <div class="row row-center" style="background: yellow;">
-      <input type="text" ng-model="name" placeholder="Text" value="">
-      </div>
-      <div class="row row-center" style="background: yellow;">
-        <div class="col-offset-10"></div>
-        <div class="col text-center">จำนวนเงินรวม {{name}} บาท {{name}} สตางค์</div>
-        <div class="col-offset-10"></div>
-      </div>
-      </ion-content>
+<body ng-app="starter">
+    <ion-pane ng-controller="MyController">
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">Coin Count</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div class="row row-center">
+                <div class="col-offset-10"></div>
+                <div class="col text-left">10 บาท</div>
+                <div class="col">
+                    <button class="button button-dark button-block button-outline" style="margin:0" ng-click='p10bath(1)'>
+                        {{c10bath}}
+                    </button>
+                </div>
+                <div class="col-offset-10"></div>
+            </div>
+            <div class="row row-center">
+                <div class="col-offset-10"></div>
+                <div class="col text-left">5 บาท</div>
+                <div class="col">
+                    <button class="button button-dark button-block button-outline" style="margin:0" ng-click='p5bath(1)'>
+                        {{c5bath}}
+                    </button>
+                </div>
+                <div class="col-offset-10"></div>
+            </div>
+            <div class="row row-center">
+                <div class="col-offset-10"></div>
+                <div class="col text-left">2 บาท</div>
+                <div class="col">
+                    <button class="button button-dark button-block button-outline" style="margin:0" ng-click='p2bath(1)'>
+                        {{c2bath}}
+                    </button>
+                </div>
+                <div class="col-offset-10"></div>
+            </div>
+            <div class="row row-center">
+                <div class="col-offset-10"></div>
+                <div class="col text-left">1 บาท</div>
+                <div class="col">
+                    <button class="button button-dark button-block button-outline" style="margin:0" ng-click='p1bath(1)'>
+                        {{c1bath}}
+                    </button>
+                </div>
+                <div class="col-offset-10"></div>
+            </div>
+            <div class="row row-center">
+                <div class="col-offset-10"></div>
+                <div class="col text-left">50 สตางค์</div>
+                <div class="col">
+                    <button class="button button-dark button-block button-outline" style="margin:0" ng-click='p50satang(1)'>
+                        {{c50satang}}
+                    </button>
+                </div>
+                <div class="col-offset-10"></div>
+            </div>
+            <div class="row row-center">
+                <div class="col-offset-10"></div>
+                <div class="col text-left">25 สตางค์</div>
+                <div class="col">
+                    <button class="button button-dark button-block button-outline" style="margin:0" ng-click='p25satang(1)'>
+                        {{c25satang}}
+                    </button>
+                </div>
+                <div class="col-offset-10"></div>
+            </div>
+            <div class="row row-center" style="background: yellow;">
+                <!--<input type="text" ng-model="name" placeholder="Text" value="">-->
+            </div>
+            <div class="row row-center" style="background: yellow;">
+                <div class="col-offset-10"></div>
+                <!--<div class="col text-center">จำนวนเงินรวม {{bathTotal}} บาท {{satangTotal}} สตางค์</div>-->
+                <div class="col text-center">จำนวนเงินรวม {{Total}} บาท</div>
+                <div class="col-offset-10"></div>
+            </div>
+            <h1>{{username}}</h1>
+        </ion-content>
     </ion-pane>
-  </body>
+</body>
+
 </html>
